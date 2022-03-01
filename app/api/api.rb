@@ -5,6 +5,4 @@ class API < Grape::API
   prefix :api
 
   mount News::News
-
-  add_swagger_documentation
 end

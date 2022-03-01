@@ -7,11 +7,16 @@ module News
 
     get '/' do
       location = params[:location]
+      page = params[:page] || 1
+      page_size = params[:page_size] || 20
+
       news = if location.present?
                NewsModel::News.where(location: location)
              else
                NewsModel::News.all
              end
+      news = news.page(page).per(page_size)
+
       {
         messages: 'getNews',
         news: news

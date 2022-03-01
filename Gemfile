@@ -10,7 +10,6 @@ gem 'bootsnap', require: false
 gem 'dotenv-rails', '~> 2.7'
 gem 'faraday', '~> 2.2'
 gem 'grape', '~> 1.6'
-gem 'grape-swagger', '~> 1.4'
 gem 'kaminari', '~> 1.2'
 gem 'lograge', '~> 0.11.2'
 gem 'pg', '~> 1.3'
