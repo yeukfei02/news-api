@@ -1,24 +1,81 @@
-# README
+# news-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+news-api
 
-Things you may want to cover:
+documentation: <https://documenter.getpostman.com/view/3827865/UVksLZKk>
 
-* Ruby version
+api url: <https://news-api-prod.herokuapp.com/>
 
-* System dependencies
+## Requirement
 
-* Configuration
+- install ruby (v3.0.3)
+- install gem
+- install bundle
 
-* Database creation
+## Testing and run
 
-* Database initialization
+```zsh
+// install ruby dependencies
+$ bundle install
 
-* How to run the test suite
+// run api in local
+$ rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+// create controller
+$ rails g controller <controllerName>
 
-* Deployment instructions
+// create model
+$ rails g model <modelName>
 
-* ...
+// create migration file
+$ rails g migration <migrationName>
+
+// db migration
+$ rails db:migrate
+
+// db rollback
+$ rails db:rollback
+
+// db reset
+$ rails db:migrate:reset
+
+// list routes
+$ rails routes
+
+// run test case
+$ bundle exec rspec
+
+// rubocop
+$ rubocop --auto-correct
+$ rubocop -A
+
+// reek
+$ reek
+
+// generate schema info in model
+$ annotate --models
+
+// audit Gemfile.lock
+$ bundler-audit
+```
+
+## Docker
+
+```zsh
+// build images and start container in one line
+docker-compose up -d --build
+
+// run db migration in container
+docker-compose exec web bundle exec rails db:migrate
+
+// go inside container
+docker exec -it <containerId> /bin/bash
+
+// check container logs
+docker logs <containerId>
+
+// remove and stop container
+docker-compose down
+```
+
+open localhost:3000
