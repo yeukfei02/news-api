@@ -17,7 +17,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-module NewsModel
+module NewsAPI
   class News < ApplicationRecord
     enum location: {
       'hk': 'hk',

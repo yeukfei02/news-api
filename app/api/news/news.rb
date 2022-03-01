@@ -11,9 +11,9 @@ module News
       page_size = params[:page_size] || 20
 
       news = if location.present?
-               NewsModel::News.where(location: location)
+               NewsAPI::News.where(location: location)
              else
-               NewsModel::News.all
+               NewsAPI::News.all
              end
       news = news.page(page).per(page_size)
 
@@ -31,7 +31,7 @@ module News
       if id.present?
         {
           messages: 'getNewsById',
-          news: NewsModel::News.find(id)
+          news: NewsAPI::News.find(id)
         }
       else
         {
