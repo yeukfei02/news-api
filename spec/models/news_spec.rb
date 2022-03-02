@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe NewsAPI::News, type: :model do
+RSpec.describe NewsApi::News, type: :model do
   # let!(:news) do
   #   create(:news)
   # end

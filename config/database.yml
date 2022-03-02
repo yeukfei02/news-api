@@ -7,20 +7,20 @@ default: &default
 development:
   <<: *default
   host: <%= ENV.fetch('DB_HOST_DEV', 'localhost') %>
-  username: <%= ENV.fetch('DB_USERNAME_DEV', 'divisionly_api') %>
-  password: <%= ENV.fetch('DB_PASSWORD_DEV', 'divisionly_api') %>
-  database: <%= ENV.fetch('DB_NAME_DEV', 'divisionly_api_dev') %>
+  username: <%= ENV.fetch('DB_USERNAME_DEV', 'news_api') %>
+  password: <%= ENV.fetch('DB_PASSWORD_DEV', 'news_api') %>
+  database: <%= ENV.fetch('DB_NAME_DEV', 'news_api_dev') %>
 
 test:
   <<: *default
   host: <%= ENV.fetch('DB_HOST_TEST', 'localhost') %>
-  username: <%= ENV.fetch('DB_USERNAME_TEST', 'divisionly_api') %>
-  password: <%= ENV.fetch('DB_PASSWORD_TEST', 'divisionly_api') %>
-  database: <%= ENV.fetch('DB_NAME_TEST', 'divisionly_api_test') %>
+  username: <%= ENV.fetch('DB_USERNAME_TEST', 'news_api') %>
+  password: <%= ENV.fetch('DB_PASSWORD_TEST', 'news_api') %>
+  database: <%= ENV.fetch('DB_NAME_TEST', 'news_api_test') %>
 
 production:
   <<: *default
   host: <%= ENV.fetch('DB_HOST_PROD', 'localhost') %>
-  username: <%= ENV.fetch('DB_USERNAME_PROD', 'divisionly_api') %>
-  password: <%= ENV.fetch('DB_PASSWORD_PROD', 'divisionly_api') %>
-  database: <%= ENV.fetch('DB_NAME_PROD', 'divisionly_api') %>
+  username: <%= ENV.fetch('DB_USERNAME_PROD', 'news_api') %>
+  password: <%= ENV.fetch('DB_PASSWORD_PROD', 'news_api') %>
+  database: <%= ENV.fetch('DB_NAME_PROD', 'news_api') %>
