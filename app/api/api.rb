@@ -5,4 +5,5 @@ class Api < Grape::API
   prefix :api
 
   mount News::News
+  mount Bookmark::Bookmark
 end

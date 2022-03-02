@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_121303) do
+ActiveRecord::Schema.define(version: 2022_03_02_071803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "news_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["news_id"], name: "index_bookmarks_on_news_id"
+  end
 
   create_table "news", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.jsonb "source"
@@ -40,4 +47,5 @@ ActiveRecord::Schema.define(version: 2022_03_01_121303) do
     t.index ["url_to_image"], name: "index_news_on_url_to_image"
   end
 
+  add_foreign_key "bookmarks", "news"
 end

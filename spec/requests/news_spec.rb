@@ -11,6 +11,16 @@ RSpec.describe 'News', type: :request do
       create(:news, location: 'tw')
     ]
   end
+  let!(:bookmark_list) do
+    [
+      create(:bookmark, news: news_list[0]),
+      create(:bookmark, news: news_list[1])
+    ]
+  end
+
+  before do
+    news_list[0].update!(bookmarks: bookmark_list)
+  end
 
   describe 'GET /api/news' do
     context 'without location param' do
@@ -23,6 +33,7 @@ RSpec.describe 'News', type: :request do
 
         response_body = JSON.parse(response.body)
         expect(response_body).to be_present
+        expect(response_body['news'].length).to eq(4)
       end
     end
 
@@ -36,6 +47,21 @@ RSpec.describe 'News', type: :request do
 
         response_body = JSON.parse(response.body)
         expect(response_body).to be_present
+        expect(response_body['news'].length).to eq(1)
+      end
+    end
+
+    context 'with location, page, page_size param' do
+      before do
+        get '/api/news', params: { location: 'hk', page: '1', page_size: '2' }
+      end
+
+      it 'return news' do
+        expect(response.status).to eq(200)
+
+        response_body = JSON.parse(response.body)
+        expect(response_body).to be_present
+        expect(response_body['news'].length).to eq(1)
       end
     end
   end
@@ -50,6 +76,7 @@ RSpec.describe 'News', type: :request do
 
       response_body = JSON.parse(response.body)
       expect(response_body).to be_present
+      expect(response_body['news']).to be_present
     end
   end
 end
