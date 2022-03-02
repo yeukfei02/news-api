@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
+  root 'main#index'
+
   mount Api => '/api'
 end
