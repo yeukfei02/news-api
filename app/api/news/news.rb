@@ -29,9 +29,11 @@ module News
     get '/:id' do
       id = params[:id]
       if id.present?
+        news = NewsApi::News.find(id)
+
         {
           messages: 'getNewsById',
-          news: NewsApi::News.find(id)
+          news: news
         }
       else
         {
