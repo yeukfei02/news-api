@@ -44,7 +44,7 @@ class GetDifferentLocationsNewsWorker
             published_at = article['publishedAt']
             content = article['content']
 
-            NewsAPI::News.create!(
+            NewsApi::News.create!(
               source: source,
               author: author,
               title: title,

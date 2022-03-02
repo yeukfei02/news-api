@@ -18,7 +18,7 @@
 #  updated_at   :datetime         not null
 #
 FactoryBot.define do
-  factory :news, class: 'NewsAPI::News' do
+  factory :news, class: 'NewsApi::News' do
     source { Faker::Json.shallow_json(width: 3) }
     author { Faker::Lorem.word }
     title { Faker::Lorem.word }
@@ -27,6 +27,6 @@ FactoryBot.define do
     url_to_image { Faker::Internet.url }
     published_at { Faker::Date.in_date_period }
     content { Faker::Lorem.sentence }
-    location { NewsAPI::News.locations.keys.sample }
+    location { NewsApi::News.location_values.keys.sample }
   end
 end

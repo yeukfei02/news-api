@@ -17,9 +17,9 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-module NewsAPI
+module NewsApi
   class News < ApplicationRecord
-    enum location: {
+    enum location_value: {
       'hk': 'hk',
       'sg': 'sg',
       'cn': 'cn',
@@ -27,6 +27,6 @@ module NewsAPI
     }
 
     # validation
-    validates :location, inclusion: { in: locations.keys }
+    validates :location, inclusion: { in: location_values.keys }
   end
 end
