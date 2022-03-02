@@ -2,3 +2,6 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+
+RSpec/MultipleExpectations:
+  Enabled: false

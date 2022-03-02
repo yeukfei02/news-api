@@ -19,7 +19,7 @@
 #
 module NewsApi
   class News < ApplicationRecord
-    enum location: {
+    enum location_value: {
       'hk': 'hk',
       'sg': 'sg',
       'cn': 'cn',
@@ -27,6 +27,6 @@ module NewsApi
     }
 
     # validation
-    validates :location, inclusion: { in: locations.keys }
+    validates :location, inclusion: { in: location_values.keys }
   end
 end

@@ -27,6 +27,6 @@ FactoryBot.define do
     url_to_image { Faker::Internet.url }
     published_at { Faker::Date.in_date_period }
     content { Faker::Lorem.sentence }
-    location { NewsApi::News.locations.keys.sample }
+    location { NewsApi::News.location_values.keys.sample }
   end
 end
