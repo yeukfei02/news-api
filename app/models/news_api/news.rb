@@ -26,6 +26,9 @@ module NewsApi
       'tw': 'tw'
     }
 
+    # association
+    has_many :bookmarks, dependent: :destroy
+
     # validation
     validates :location, inclusion: { in: location_values.keys }
   end

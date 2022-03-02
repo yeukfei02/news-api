@@ -19,6 +19,7 @@
 #
 FactoryBot.define do
   factory :news, class: 'NewsApi::News' do
+    # association :bookmarks, factory: :bookmark
     source { Faker::Json.shallow_json(width: 3) }
     author { Faker::Lorem.word }
     title { Faker::Lorem.word }
