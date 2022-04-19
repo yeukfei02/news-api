@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Mains', type: :request do
-  describe 'GET /' do
+  context 'GET /' do
     before do
       get '/'
     end
