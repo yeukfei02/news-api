@@ -4,8 +4,6 @@ news-api
 
 documentation: <https://documenter.getpostman.com/view/3827865/UVksLZKk>
 
-api url: <https://news-api-prod.herokuapp.com/>
-
 ## Requirement
 
 - install ruby (v3.0.3)
